@@ -31,7 +31,8 @@ export function Home() {
 			console.log("start")
 			WavesKeeper.auth(authData)
 			.then( auth => {
-				console.log(auth);
+				alert(JSON.stringify(auth))
+				console.log(JSON.stringify(auth));
 			}).catch(error => {
 				console.log(error);
 			});
