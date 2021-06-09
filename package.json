@@ -87,9 +87,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
+    "@waves.exchange/provider-web": "^1.0.2",
+    "@waves/provider-seed": "^0.1.1",
+    "@waves/signer": "^1.0.2",
+    "@waves/waves-transactions": "^4.1.9-beta.5",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "tslib": "^2.2.0"
   },
   "engines": {
     "node": "^10 || ^12 || ^14 || ^16"
