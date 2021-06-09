@@ -7,6 +7,7 @@ import logo from "./logo.svg";
 export function Home() {
 	const [message, setMessage] = useState("Loading...");
 
+
 	useEffect(() => {
 		fetch("/api")
 			.then((res) => {
@@ -23,12 +24,29 @@ export function Home() {
 			});
 	}, []);
 
+	function authFunc() {
+		const authData = { data: 'Auth on my site'};
+	   
+		if (WavesKeeper) {
+			console.log("start")
+			WavesKeeper.auth(authData)
+			.then( auth => {
+				console.log(auth);
+			}).catch(error => {
+				console.log(error);
+			});
+		} else {
+			alert("To Auth Waveskeeper should be installed")
+		}
+	   }
+
 	return (
 		<main role="main">
 			<div>
 				<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
 				<h1 className="message" data-qa="message">{message}</h1>
 				<Link to="/about/this/site">About</Link>
+				<button onClick={authFunc}children="">Auth</button>
 			</div>
 		</main>
 	);
